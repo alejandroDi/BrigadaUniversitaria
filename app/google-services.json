@@ -1,0 +1,43 @@
+{
+  "project_info": {
+    "project_number": "713042588176",
+    "firebase_url": "https://brigadauniversitaria-dbb1e.firebaseio.com",
+    "project_id": "brigadauniversitaria-dbb1e",
+    "storage_bucket": "brigadauniversitaria-dbb1e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:713042588176:android:7a4655586910e253d9d095",
+        "android_client_info": {
+          "package_name": "com.example.brigadauniversitaria"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "713042588176-ejp2ns7f2u1njcgmkp98ttgan182ce5p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDUukUmzoy4j6bsWLQJYKfDy_EajB8QqTU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "713042588176-ejp2ns7f2u1njcgmkp98ttgan182ce5p.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
+
+
+

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_map"
+            android:icon="@drawable/ic_menu_map"
+            android:title="@string/menu_mapa" />
+
+
+        <item
+            android:id="@+id/nav_perfil"
+            android:icon="@drawable/ic_menu_perfil"
+            android:title="@string/menu_perfil" />
+        <item
+            android:id="@+id/nav_notif"
+            android:icon="@drawable/ic_menu_noti"
+            android:title="@string/menu_notif" />
+
+    </group>
+
+
+    <item android:title="@string/seg_emer">
+
+        <menu>
+
+            <item
+                android:id="@+id/nav_ayuda"
+                android:icon="@drawable/ic_menu_ayuda"
+                android:title="@string/ayuda" />
+
+            <item
+                android:id="@+id/nav_locales"
+                android:icon="@drawable/ic_menu_locales"
+                android:title="@string/locales" />
+        </menu>
+    </item>
+
+        <item android:title="@string/conf">
+
+            <menu>
+
+                <item
+                    android:id="@+id/nav_contactos"
+                    android:icon="@drawable/ic_menu_contac"
+                    android:title="@string/contac" />
+
+                <item
+                    android:id="@+id/nav_informacion"
+                    android:icon="@drawable/ic_menu_info"
+                    android:title="@string/info" />
+                <item
+                    android:id="@+id/nav_close"
+                    android:icon="@drawable/ic_menu_close"
+                    android:title="@string/close" />
+            </menu>
+        </item>
+</menu>
