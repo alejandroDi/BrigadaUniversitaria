@@ -7,12 +7,9 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.example.brigadauniversitaria.Fragments.MapsFragment;
+import com.example.brigadauniversitaria.loginModule.view.Login;
 import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -20,10 +17,6 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.squareup.picasso.Picasso;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.core.view.GravityCompat;
-import androidx.fragment.app.FragmentTransaction;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -67,7 +60,7 @@ public class NavigatorActivity extends AppCompatActivity{
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
             mAppBarConfiguration = new AppBarConfiguration.Builder(
-                    R.id.nav_map,R.id.nav_perfil,R.id.nav_notif)
+                    R.id.nav_map,R.id.nav_perfil,R.id.nav_notif,R.id.nav_chat,R.id.nav_locales,R.id.nav_contactos,R.id.nav_informacion)
                 .setDrawerLayout(drawer)
                 .build();
         NavController navController = Navigation.findNavController(this,R.id.nav_host_fragment);

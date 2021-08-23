@@ -58,12 +58,7 @@ public class MapsFragment extends Fragment {
                     ubicacionActual(googleMap);
                 }
             });
-            compRuta.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    
-                }
-            });
+
 
         }
     };
@@ -102,7 +97,6 @@ public class MapsFragment extends Fragment {
                              @Nullable Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_maps,container,false);
         ubicacion = view.findViewById(R.id.btnLocation);
-        compRuta = view.findViewById(R.id.btnComp);
         verificar = view.findViewById(R.id.btnVeri);
         insi = view.findViewById(R.id.btnInsidente);
         return view;
