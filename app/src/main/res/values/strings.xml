@@ -96,6 +96,7 @@
     <string name="profile_message_imageUploading">Cambiando imagen de perfil, espere&#8230;</string>
     <string name="profile_message_imageUpdated">Imagen de perfil actualizada exitosamente.</string>
     <string name="chat_email">Email</string>
+    <string name="main_item_max_messageUnread">99+</string>
 
 
 </resources>
