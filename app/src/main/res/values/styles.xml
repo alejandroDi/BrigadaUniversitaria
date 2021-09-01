@@ -13,5 +13,32 @@
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+    <!-- DialogFragment -->
+
+
+
+    <style parent="Theme.AppCompat.Light.Dialog.Alert" name="DialogFragmentTheme">
+
+    <!--buttons color-->
+
+
+    <item name="colorAccent">@color/colorAccent</item>
+
+    <!--dialog background-->
+
+
+    <item name="android:windowBackground">@drawable/background_dialog</item>
+
+</style>
+
+
+    <style name="DialogFragmentTheme.FullScreen">
+
+    <!--dialog background-->
+
+
+    <item name="android:windowBackground">@drawable/background_dialog_full_screen</item>
+
+</style>
 
 </resources>

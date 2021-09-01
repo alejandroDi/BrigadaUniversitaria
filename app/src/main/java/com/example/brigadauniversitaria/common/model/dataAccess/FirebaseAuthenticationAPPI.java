@@ -14,6 +14,7 @@ public class FirebaseAuthenticationAPPI {
     public static FirebaseAuthenticationAPPI getInstance(){
         return SingletonHolder.INSTANCE;
     }
+
     private FirebaseAuthenticationAPPI() {
         this.mFirebaseAuth = FirebaseAuth.getInstance();
     }

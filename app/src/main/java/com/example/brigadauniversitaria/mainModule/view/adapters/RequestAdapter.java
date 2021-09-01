@@ -71,6 +71,31 @@ public class RequestAdapter extends RecyclerView.Adapter<RequestAdapter.ViewHold
         return mUsers.size();
     }
 
+    public void add(User user){
+        if (!mUsers.contains(user)){
+            mUsers.add(user);
+            notifyItemInserted(mUsers.size()-1);
+        }else {
+            update(user);
+        }
+    }
+
+    public void update(User user) {
+        if (mUsers.contains(user)){
+            int index = mUsers.indexOf(user);
+            mUsers.set(index, user);
+            notifyItemChanged(index);
+        }
+    }
+
+    public void remove(User user){
+        if (mUsers.contains(user)){
+            int index = mUsers.indexOf(user);
+            mUsers.remove(index);
+            notifyItemRemoved(index);
+        }
+    }
+
     class ViewHolder extends RecyclerView.ViewHolder{
         @BindView(R.id.imgFoto)
         CircleImageView imgFoto;
@@ -82,6 +107,7 @@ public class RequestAdapter extends RecyclerView.Adapter<RequestAdapter.ViewHold
         AppCompatImageButton btnAdd;
         @BindView(R.id.btnDeny)
         AppCompatImageButton btnDeny;
+
         ViewHolder(@NonNull @NotNull View itemView) {
             super(itemView);
             ButterKnife.bind(this,itemView);

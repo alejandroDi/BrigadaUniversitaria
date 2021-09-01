@@ -48,7 +48,7 @@ public class FirebaseRealtimeDatabaseAPI {
     }
 
     public DatabaseReference getRequestReference(String email) {
-        return getRootReferences().child(PATH_REQUESTS);
+        return getRootReferences().child(PATH_REQUESTS).child(email);
     }
 
     public void updateMyLastConnection(boolean online,String uid) {

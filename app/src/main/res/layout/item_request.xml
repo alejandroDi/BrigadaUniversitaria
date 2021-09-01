@@ -9,10 +9,11 @@
     android:focusable="true"
     android:background="@color/color_background">
 
+
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/imgFoto"
         android:layout_width="@dimen/img_item_size"
-        android:layout_height="80dp"
+        android:layout_height="@dimen/img_item_size"
         android:src="@drawable/ic_account_box"
         android:layout_marginStart="@dimen/item_padding_horizontal"
         app:layout_constraintStart_toStartOf="parent"
@@ -28,19 +29,19 @@
         android:layout_marginStart="@dimen/item_padding_horizontal"
         android:layout_marginEnd="@dimen/item_padding_horizontal"
         app:layout_constraintStart_toEndOf="@+id/imgFoto"
+        app:layout_constraintEnd_toStartOf="@id/btnAdd"
         app:layout_constraintTop_toTopOf="parent"/>
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tvEmail"
         android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
         android:hint="@string/chat_email"
         android:textAppearance="@style/itemMedium"
         android:layout_marginBottom="@dimen/item_padding_horizontal"
-        app:layout_constraintStart_toStartOf="@+id/tvNombre"
-        app:layout_constraintEnd_toEndOf="@id/tvNombre"
         app:layout_constraintTop_toBottomOf="@id/tvNombre"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        app:layout_constraintStart_toEndOf="@+id/imgFoto"
+        app:layout_constraintEnd_toStartOf="@id/btnAdd" />
 
     <androidx.appcompat.widget.AppCompatImageButton
         android:id="@+id/btnDeny"

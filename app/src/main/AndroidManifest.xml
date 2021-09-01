@@ -32,20 +32,25 @@
         <activity
             android:name=".NavigatorActivity"
             android:label="@string/title_activity_navigator"
-            android:theme="@style/Theme.DayNight"
-            android:launchMode="singleTask">
+            android:launchMode="singleTask"
+            android:theme="@style/Theme.DayNight">
             <intent-filter>
-                <action android:name="Navigator"/>
-                <category android:name="android.intent.category.DEFAULT"/>
+                <action android:name="Navigator" />
+
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-
-
         <activity android:name=".loginModule.view.Login">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".mainModule.view.MainActivity">
+            <intent-filter>
+                <action android:name="MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
 

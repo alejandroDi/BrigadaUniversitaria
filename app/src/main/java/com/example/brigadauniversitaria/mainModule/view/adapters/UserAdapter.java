@@ -50,7 +50,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder> {
 
         holder.setClickListener(user, mListener);
 
-        holder.nombre.setText(user.getUsernameValid());
+        holder.tvNombre.setText(user.getUsernameValid());
 
         int messageUnread = user.getMessagesUnread();
         if (messageUnread > 0){
@@ -77,11 +77,36 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder> {
         return mUser.size();
     }
 
+    public void add(User user){
+        if (!mUser.contains(user)){
+            mUser.add(user);
+            notifyItemInserted(mUser.size()-1);
+        }else {
+            update(user);
+        }
+    }
+
+    public void update(User user) {
+        if (mUser.contains(user)){
+            int index = mUser.indexOf(user);
+            mUser.set(index, user);
+            notifyItemChanged(index);
+        }
+    }
+
+    public void remove(User user){
+        if (mUser.contains(user)){
+            int index = mUser.indexOf(user);
+            mUser.remove(index);
+            notifyItemRemoved(index);
+        }
+    }
+
     class ViewHolder extends RecyclerView.ViewHolder {
         @BindView(R.id.imgFoto)
         CircleImageView imgFoto;
-        @BindView(R.id.nombre)
-        TextView nombre;
+        @BindView(R.id.tvNombre)
+        TextView tvNombre;
         @BindView(R.id.chat_cont)
         TextView chat_cont;
 

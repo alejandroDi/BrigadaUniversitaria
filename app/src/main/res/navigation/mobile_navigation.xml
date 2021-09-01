@@ -22,11 +22,13 @@
         android:label="@string/menu_notif"
         tools:layout="@layout/fragment_notif" />
 
-    <fragment
+    <activity
         android:id="@+id/nav_chat"
-        android:name="com.example.brigadauniversitaria.Fragments.ChatFragment"
+        android:name="com.example.brigadauniversitaria.mainModule.view.MainActivity"
         android:label="@string/menu_chat"
-        tools:layout="@layout/fragment_chat" />
+        tools:layout="@layout/activity_chat" />
+
+
 
     <fragment
         android:id="@+id/nav_locales"

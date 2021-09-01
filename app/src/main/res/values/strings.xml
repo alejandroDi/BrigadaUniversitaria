@@ -33,7 +33,7 @@
     <string name="chat_nombre">nombre</string>
     <string name="chat_cont">0</string>
     <string name="chat_mensaje">mesaje</string>
-    <string name="welcome">Welcome</string>
+    <string name="welcome">Preparando todo&#8230;</string>
     <!-- string app -->
     <string name="about_messaggi_description">La marca Texting y el logo son propiedad de Cursos
         Android ANT. Todos los derechos reservados.</string>
@@ -72,7 +72,7 @@
     <string name="login_message_success">Bienvenido %s</string>
 
     <string name="main_dialog_accept">Eliminar</string>
-    <string name="main_dialog_message_confirmDelete">Â¿Estas seguro que quieres quitar a %s de tus amigos?
+    <string name="main_dialog_message_confirmDelete">¿Estas seguro que quieres quitar a %s de tus amigos?
         \nSus conversaciones no se eliminarán permanentemente.</string>
     <string name="main_dialog_title_confirmDelete">Eliminar amigo</string>
     <string name="main_error_permission_denied">Cerrando&#8230;</string>
@@ -97,6 +97,15 @@
     <string name="profile_message_imageUpdated">Imagen de perfil actualizada exitosamente.</string>
     <string name="chat_email">Email</string>
     <string name="main_item_max_messageUnread">99+</string>
+    <string name="title_activity_main">MainActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
 
 
 </resources>

@@ -1,5 +1,6 @@
 package com.example.brigadauniversitaria.mainModule;
 
+import com.example.brigadauniversitaria.NavigatorActivity;
 import com.example.brigadauniversitaria.common.pojo.User;
 import com.example.brigadauniversitaria.mainModule.events.MainEvent;
 import com.example.brigadauniversitaria.mainModule.model.MainInteractor;
@@ -11,12 +12,19 @@ import org.greenrobot.eventbus.Subscribe;
 
 public class MainPresenterClass implements MainPresenter{
     private MainView mView;
+    private NavigatorActivity mNavigator;
     private MainInteractor mInteractor;
 
     public MainPresenterClass(MainView mView) {
         this.mView = mView;
         this.mInteractor = new MainInteractorClass();
     }
+
+    public MainPresenterClass(NavigatorActivity mNavigator) {
+        this.mNavigator = mNavigator;
+        this.mInteractor = new MainInteractorClass();
+    }
+
 
     @Override
     public void onCreate() {
