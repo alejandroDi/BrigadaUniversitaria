@@ -1,19 +1,25 @@
 package com.example.brigadauniversitaria.mainModule.view;
 
 import android.app.NotificationManager;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.coordinatorlayout.widget.CoordinatorLayout;
+import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 
 import com.example.brigadauniversitaria.R;
 import com.example.brigadauniversitaria.common.pojo.User;
 import com.example.brigadauniversitaria.mainModule.MainPresenter;
 import com.example.brigadauniversitaria.mainModule.MainPresenterClass;
+import com.example.brigadauniversitaria.mainModule.view.MainView;
 import com.example.brigadauniversitaria.mainModule.view.adapters.OnItemClickListener;
 import com.example.brigadauniversitaria.mainModule.view.adapters.RequestAdapter;
 import com.example.brigadauniversitaria.mainModule.view.adapters.UserAdapter;
@@ -25,8 +31,10 @@ import java.util.Locale;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.Unbinder;
 
-public class MainActivity extends AppCompatActivity implements OnItemClickListener, MainView {
+
+public class MainFragment extends Fragment implements OnItemClickListener, MainView {
     @BindView(R.id.rvRequests)
     RecyclerView rvRequests;
     @BindView(R.id.rvUsers)
@@ -35,64 +43,64 @@ public class MainActivity extends AppCompatActivity implements OnItemClickListen
     FloatingActionButton fab;
     @BindView(R.id.contentMain)
     CoordinatorLayout contentMain;
-
+    Unbinder unbinder;
     private UserAdapter mUserAdapter;
     private RequestAdapter mRequestAdapter;
     private MainPresenter mPresenter;
 
     private User mUser;
 
+    public MainFragment() {
+        // Required empty public constructor
+    }
 
     @Override
-    protected  void onCreate(Bundle savedInstanceState){
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_chat);
-        ButterKnife.bind(this);
-
+    public View onCreateView(LayoutInflater inflater,ViewGroup container,
+                             Bundle savedInstanceState) {
+       View view = inflater.inflate(R.layout.fragment_chat,container,false);
+        unbinder = ButterKnife.bind(this,view);
         mPresenter = new MainPresenterClass(this);
         mPresenter.onCreate();
         mUser = mPresenter.getCurrentUser();
-
         configAdapter();
-        configRecyclerView();
-
-    }
-
-
-    private void configAdapter() {
-        mUserAdapter = new UserAdapter(new ArrayList<>(), this);
-        mRequestAdapter = new RequestAdapter(new ArrayList<>(), this);
-    }
-
-    private void configRecyclerView(){
-        rvUsers.setLayoutManager(new LinearLayoutManager(this));
+        rvUsers.setLayoutManager(new LinearLayoutManager(getContext()));
         rvUsers.setAdapter(mUserAdapter);
-        rvRequests.setLayoutManager(new LinearLayoutManager(this));
+        rvRequests.setLayoutManager(new LinearLayoutManager(getContext()));
         rvRequests.setAdapter(mRequestAdapter);
 
+        return view;
     }
 
+    private void configAdapter() {
+        mUserAdapter = new UserAdapter(new ArrayList<>(),this);
+        mRequestAdapter = new RequestAdapter(new ArrayList<>(),this);
+    }
+
+
+
+
+
     @Override
-    protected void onResume() {
+    public void onResume() {
         super.onResume();
         mPresenter.onResume();
         clearNotifycation();
     }
 
     @Override
-    protected void onPause() {
+    public void onPause() {
         super.onPause();
         mPresenter.onPause();
     }
 
     @Override
-    protected void onDestroy() {
+    public void onDestroy() {
         super.onDestroy();
         mPresenter.onDestroy();
     }
 
     private void clearNotifycation(){
-        NotificationManager notificationManager = (NotificationManager)getSystemService(NOTIFICATION_SERVICE);
+        NotificationManager notificationManager = (NotificationManager)getActivity().getSystemService(getActivity().NOTIFICATION_SERVICE);
         if (notificationManager != null){
             notificationManager.cancelAll();
         }
@@ -163,9 +171,9 @@ public class MainActivity extends AppCompatActivity implements OnItemClickListen
 
     @Override
     public void onItemLongClick(final User user) {
-        new AlertDialog.Builder(this,R.style.DialogFragmentTheme)
+        new AlertDialog.Builder(getActivity(),R.style.DialogFragmentTheme)
                 .setTitle(getString(R.string.main_dialog_title_confirmDelete))
-                .setMessage(String.format(Locale.ROOT, getString(R.string.main_dialog_message_confirmDelete),
+                .setMessage(String.format(Locale.ROOT,getString(R.string.main_dialog_message_confirmDelete),
                                           user.getUsernameValid()))
                 .setPositiveButton(R.string.main_dialog_accept,new DialogInterface.OnClickListener() {
                     @Override
@@ -186,4 +194,5 @@ public class MainActivity extends AppCompatActivity implements OnItemClickListen
     public void onDenyRequest(User user) {
         mPresenter.denyRequest(user);
     }
+
 }
