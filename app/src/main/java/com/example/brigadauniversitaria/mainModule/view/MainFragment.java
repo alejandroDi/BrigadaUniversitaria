@@ -16,6 +16,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.brigadauniversitaria.R;
+import com.example.brigadauniversitaria.addModule.view.AddFragment;
 import com.example.brigadauniversitaria.common.pojo.User;
 import com.example.brigadauniversitaria.mainModule.MainPresenter;
 import com.example.brigadauniversitaria.mainModule.MainPresenterClass;
@@ -31,6 +32,7 @@ import java.util.Locale;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 import butterknife.Unbinder;
 
 
@@ -104,6 +106,11 @@ public class MainFragment extends Fragment implements OnItemClickListener, MainV
         if (notificationManager != null){
             notificationManager.cancelAll();
         }
+    }
+
+    @OnClick(R.id.fab)
+    public void onAddClicked(){
+        new AddFragment().show(getActivity().getSupportFragmentManager(),getString(R.string.addFriend_title));
     }
 
     /*

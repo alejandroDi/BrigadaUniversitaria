@@ -48,15 +48,15 @@
     <string name="common_label_email">Correo electrónico</string>
     <string name="common_message_noInternet">Sin acceso a internet, verifique su conexión</string>
     <string name="common_validate_field_required">Este campo es requerido.</string>
-    <string name="common_validate_email_invalid">Este correo no tiene un formato vÃ¡lido, verifique.</string>
+    <string name="common_validate_email_invalid">Este correo no tiene un formato valido, verifique.</string>
 
     <string name="description_img_sendMessage">Enviar mensaje</string>
-    <string name="description_img_gellery">Seleccionar imagen desde la GalerÃ­a.</string>
+    <string name="description_img_gellery">Seleccionar imagen desde la Galería.</string>
     <string name="description_img_profile">Imagen de perfil de usuario.</string>
 
     <string name="addFriend_error_message">Imposible enviar solicitud, intende mÃ¡s tarde.</string>
     <string name="addFriend_message_request_dispatched">Solicitud enviada exitosamente</string>
-    <string name="addFriend_title">AÃ±adir amigo</string>
+    <string name="addFriend_title">Añadir amigo</string>
 
     <string name="chat_dialog_sendImage_title">Enviar imagen</string>
     <string name="chat_dialog_sendImage_message">Â¿Deseas enviarle esta imagen a %s?</string>
