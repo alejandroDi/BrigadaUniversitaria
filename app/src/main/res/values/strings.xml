@@ -54,7 +54,7 @@
     <string name="description_img_gellery">Seleccionar imagen desde la Galería.</string>
     <string name="description_img_profile">Imagen de perfil de usuario.</string>
 
-    <string name="addFriend_error_message">Imposible enviar solicitud, intende mÃ¡s tarde.</string>
+    <string name="addFriend_error_message">Imposible enviar solicitud, intente más tarde.</string>
     <string name="addFriend_message_request_dispatched">Solicitud enviada exitosamente</string>
     <string name="addFriend_title">Añadir amigo</string>
 
@@ -106,6 +106,9 @@
 
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="addFriend_error_user_exist">No hay ningún usuario con este email.</string>
+    <string name="addFriend_message_request_exist">Lo siento, tu solicitud ya habia sido enviada.</string>
+    <string name="friendAdded_message_request_exist">Lo siento, ya tienes agregado a este usuario.</string>
 
 
 </resources>
