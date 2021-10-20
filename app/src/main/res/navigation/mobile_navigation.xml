@@ -12,7 +12,7 @@
 
     <fragment
         android:id="@+id/nav_perfil"
-        android:name="com.example.brigadauniversitaria.Fragments.PerfilFragment"
+        android:name="com.example.brigadauniversitaria.profileModule.view.PerfilFragment"
         android:label="@string/menu_perfil"
         tools:layout="@layout/fragment_perfil" />
 

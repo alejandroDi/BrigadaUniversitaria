@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context=".mainModule.view.MainActivity"
+    tools:context=".mainModule.view.MainFragment"
     tools:showIn="@layout/fragment_chat">
 
     <androidx.recyclerview.widget.RecyclerView

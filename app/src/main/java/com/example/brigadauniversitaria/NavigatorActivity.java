@@ -1,5 +1,6 @@
 package com.example.brigadauniversitaria;
 
+import android.app.ActivityOptions;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -7,6 +8,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.brigadauniversitaria.common.pojo.User;
 import com.example.brigadauniversitaria.common.utils.UtilsCommon;
@@ -14,6 +16,7 @@ import com.example.brigadauniversitaria.loginModule.view.Login;
 import com.example.brigadauniversitaria.mainModule.MainPresenter;
 import com.example.brigadauniversitaria.mainModule.MainPresenterClass;
 import com.example.brigadauniversitaria.mainModule.view.MainView;
+import com.example.brigadauniversitaria.profileModule.view.PerfilFragment;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
@@ -22,6 +25,7 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.squareup.picasso.Picasso;
 
+import androidx.annotation.Nullable;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -38,6 +42,7 @@ import de.hdodenhof.circleimageview.CircleImageView;
 public class NavigatorActivity extends AppCompatActivity{
 
 
+    private static final int RC_PROFILE = 23;
     private AppBarConfiguration mAppBarConfiguration;
     private MainPresenter mPresenter;
 
@@ -70,6 +75,7 @@ public class NavigatorActivity extends AppCompatActivity{
             }
         });
         updateNavHeader();
+
 
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
@@ -106,6 +112,7 @@ public class NavigatorActivity extends AppCompatActivity{
             navMail.setText(mUser.getEmail());
             navUsername.setText(mUser.getUsernameValid());
         }
+
     }
 
 }

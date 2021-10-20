@@ -2,6 +2,7 @@ package com.example.brigadauniversitaria.common.model.dataAccess;
 
 import com.example.brigadauniversitaria.common.pojo.User;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class FirebaseAuthenticationAPPI {
     private FirebaseAuth mFirebaseAuth;
@@ -10,11 +11,11 @@ public class FirebaseAuthenticationAPPI {
 
         private static final FirebaseAuthenticationAPPI INSTANCE = new FirebaseAuthenticationAPPI();
 
+
     }
     public static FirebaseAuthenticationAPPI getInstance(){
         return SingletonHolder.INSTANCE;
     }
-
     private FirebaseAuthenticationAPPI() {
         this.mFirebaseAuth = FirebaseAuth.getInstance();
     }
@@ -32,5 +33,9 @@ public class FirebaseAuthenticationAPPI {
             user.setUri(mFirebaseAuth.getCurrentUser().getPhotoUrl());
         }
         return user;
+    }
+
+    public FirebaseUser getCurrentUser(){
+        return mFirebaseAuth.getCurrentUser();
     }
 }

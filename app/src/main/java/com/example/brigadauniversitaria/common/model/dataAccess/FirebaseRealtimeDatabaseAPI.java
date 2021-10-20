@@ -2,6 +2,7 @@ package com.example.brigadauniversitaria.common.model.dataAccess;
 
 import com.example.brigadauniversitaria.common.Constants;
 import com.example.brigadauniversitaria.common.pojo.User;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
@@ -23,6 +24,7 @@ public class FirebaseRealtimeDatabaseAPI {
 
         private static final FirebaseRealtimeDatabaseAPI INSTANCE = new FirebaseRealtimeDatabaseAPI();
 
+
     }
     public static FirebaseRealtimeDatabaseAPI getInstance(){
         return SingletonHolder.INSTANCE;
@@ -35,14 +37,13 @@ public class FirebaseRealtimeDatabaseAPI {
     /*
     * REFERENCES
     * */
-
     public DatabaseReference getRootReferences(){
         return mDatabaseReference.getRoot();
     }
+
     public DatabaseReference getUserReferenceByUid(String uid){
         return getRootReferences().child(PATH_USERS).child(uid);
     }
-
     public DatabaseReference getContactsReferences(String uid) {
         return getUserReferenceByUid(uid).child(PATH_CONTACTS);
     }
@@ -68,4 +69,6 @@ public class FirebaseRealtimeDatabaseAPI {
             getUserReferenceByUid(uid).child(User.LAST_CONNECTION_WITH).onDisconnect().cancel();        }
 
     }
+
+
 }

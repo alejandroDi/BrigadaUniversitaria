@@ -3,8 +3,10 @@ package com.example.brigadauniversitaria.mainModule.view;
 import android.app.NotificationManager;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.fragment.app.Fragment;
@@ -77,8 +79,6 @@ public class MainFragment extends Fragment implements OnItemClickListener, MainV
         mUserAdapter = new UserAdapter(new ArrayList<>(),this);
         mRequestAdapter = new RequestAdapter(new ArrayList<>(),this);
     }
-
-
 
 
 
