@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<resources>
+
+    <integer name="maxLength_username">20</integer>
+
+    <integer name="maxLength_messages_unread">3</integer>
+
+</resources>
