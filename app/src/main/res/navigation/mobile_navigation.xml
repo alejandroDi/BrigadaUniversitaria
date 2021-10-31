@@ -37,9 +37,9 @@
         tools:layout="@layout/fragment_locales" />
     <fragment
         android:id="@+id/nav_contactos"
-        android:name="com.example.brigadauniversitaria.Fragments.ContactosFragment"
+        android:name="com.example.brigadauniversitaria.contactsModule.view.ContactsFragment"
         android:label="@string/menu_contactos"
-        tools:layout="@layout/fragment_notif" />
+        tools:layout="@layout/fragment_contacts" />
     <fragment
         android:id="@+id/nav_informacion"
         android:name="com.example.brigadauniversitaria.Fragments.InformacionFragment"

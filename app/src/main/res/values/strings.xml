@@ -109,6 +109,8 @@
     <string name="addFriend_error_user_exist">No hay ningún usuario con este email.</string>
     <string name="addFriend_message_request_exist">Lo siento, tu solicitud ya habia sido enviada.</string>
     <string name="friendAdded_message_request_exist">Lo siento, ya tienes agregado a este usuario.</string>
+    <string name="chat_numero">numero telefonico</string>
+    <string name="informacio">agregar textview unicamente para presentar infromacion del sistema</string>
 
 
 </resources>
