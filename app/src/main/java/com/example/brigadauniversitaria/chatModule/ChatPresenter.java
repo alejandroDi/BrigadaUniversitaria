@@ -6,6 +6,7 @@ import android.net.Uri;
 import androidx.fragment.app.Fragment;
 
 import com.example.brigadauniversitaria.chatModule.events.ChatEvent;
+import com.example.brigadauniversitaria.common.pojo.User;
 
 public interface ChatPresenter {
     void onCreate();
@@ -14,6 +15,7 @@ public interface ChatPresenter {
     void onResume();
 
     void setupFriend(String uid,String email);
+    User getCurrentUser();
 
     void sendMessage(String msg);
     void sendImage(Fragment fragment,Uri imageUri);

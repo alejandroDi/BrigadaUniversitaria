@@ -1,15 +1,19 @@
 package com.example.brigadauniversitaria.mainModule.view;
 
+import android.app.Activity;
 import android.app.NotificationManager;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -17,9 +21,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.brigadauniversitaria.NavigatorActivity;
 import com.example.brigadauniversitaria.R;
 import com.example.brigadauniversitaria.addModule.view.AddFragment;
+import com.example.brigadauniversitaria.chatModule.view.ChatsFragment;
 import com.example.brigadauniversitaria.common.pojo.User;
+import com.example.brigadauniversitaria.iComunicaFragment;
 import com.example.brigadauniversitaria.mainModule.MainPresenter;
 import com.example.brigadauniversitaria.mainModule.MainPresenterClass;
 import com.example.brigadauniversitaria.mainModule.view.MainView;
@@ -28,6 +35,8 @@ import com.example.brigadauniversitaria.mainModule.view.adapters.RequestAdapter;
 import com.example.brigadauniversitaria.mainModule.view.adapters.UserAdapter;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
+
+import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.Locale;
@@ -51,7 +60,9 @@ public class MainFragment extends Fragment implements OnItemClickListener, MainV
     private UserAdapter mUserAdapter;
     private RequestAdapter mRequestAdapter;
     private MainPresenter mPresenter;
-
+    private NavigatorActivity navigatorActivity;
+    Activity activity;
+    iComunicaFragment iterfaceComucaFragment;
     private User mUser;
 
     public MainFragment() {
@@ -172,7 +183,23 @@ public class MainFragment extends Fragment implements OnItemClickListener, MainV
      * */
 
     @Override
+    public void onAttach(@NonNull @NotNull Context context) {
+        super.onAttach(context);
+        if (context instanceof Activity){
+            this.activity = (Activity) context;
+                iterfaceComucaFragment = (iComunicaFragment) this.activity;
+        }
+    }
+
+    @Override
+    public void onDetach() {
+        super.onDetach();
+    }
+
+    @Override
     public void onItemClick(User user) {
+        iterfaceComucaFragment.chatOpen(user);
+
 
     }
 

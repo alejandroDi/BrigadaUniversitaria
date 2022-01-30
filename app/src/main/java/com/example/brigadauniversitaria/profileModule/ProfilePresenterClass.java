@@ -28,10 +28,10 @@ public class ProfilePresenterClass implements ProfilePresenter {
         this.mInteractor = new ProfileInteratorClass();
     }
 
-    @Override
-    public void onCreate() {
-        EventBus.getDefault().register(this);
-    }
+        @Override
+        public void onCreate() {
+            EventBus.getDefault().register(this);
+        }
 
     @Override
     public void onDestroy() {

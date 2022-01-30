@@ -111,6 +111,7 @@
     <string name="friendAdded_message_request_exist">Lo siento, ya tienes agregado a este usuario.</string>
     <string name="chat_numero">numero telefonico</string>
     <string name="informacio">agregar textview unicamente para presentar infromacion del sistema</string>
+    <string name="chat_status_last_connection">Ultima conexión: %s</string>
 
 
 </resources>

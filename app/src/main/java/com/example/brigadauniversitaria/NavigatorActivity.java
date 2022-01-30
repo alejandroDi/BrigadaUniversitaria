@@ -10,6 +10,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.brigadauniversitaria.chatModule.view.ChatsFragment;
+import com.example.brigadauniversitaria.mainModule.view.adapters.OnItemClickListener;
 import com.example.brigadauniversitaria.common.pojo.User;
 import com.example.brigadauniversitaria.common.utils.UtilsCommon;
 import com.example.brigadauniversitaria.loginModule.view.Login;
@@ -19,6 +21,7 @@ import com.example.brigadauniversitaria.mainModule.view.MainView;
 import com.example.brigadauniversitaria.profileModule.view.PerfilFragment;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.navigation.NavigationView;
+import com.example.brigadauniversitaria.common.pojo.User;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.storage.FirebaseStorage;
@@ -26,6 +29,9 @@ import com.google.firebase.storage.StorageReference;
 import com.squareup.picasso.Picasso;
 
 import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -39,12 +45,15 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import de.hdodenhof.circleimageview.CircleImageView;
 
-public class NavigatorActivity extends AppCompatActivity{
+public class  NavigatorActivity extends AppCompatActivity implements iComunicaFragment{
 
 
     private static final int RC_PROFILE = 23;
     private AppBarConfiguration mAppBarConfiguration;
     private MainPresenter mPresenter;
+    FragmentManager fragmentManager;
+    FragmentTransaction fragmentTransaction;
+    ChatsFragment chatsFragment;
 
     private User mUser;
 
@@ -115,4 +124,22 @@ public class NavigatorActivity extends AppCompatActivity{
 
     }
 
+    @Override
+    public void chatOpen(User user) {
+        chatsFragment = new ChatsFragment();
+        //objecto bundle para trasportar informacion
+        Bundle bundle = new Bundle();
+        //enviar objecto que recibe con serializable
+        bundle.putString(User.UID,user.getUid());
+        bundle.putString(User.USERNAME,user.getUsername());
+        bundle.putString(User.EMAIL,user.getEmail());
+        bundle.putString(User.PHOTO_URL,user.getPhotoUrl());
+        chatsFragment.setArguments(bundle);
+        //abrir fragemnto
+        fragmentManager = getSupportFragmentManager();
+        fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.drawer_layout,chatsFragment);
+        fragmentTransaction.addToBackStack(null);
+        fragmentTransaction.commit();
+    }
 }

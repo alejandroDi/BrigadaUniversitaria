@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ImageView;
 
+import androidx.appcompat.widget.AppCompatEditText;
 import androidx.appcompat.widget.LinearLayoutCompat;
 import androidx.fragment.app.FragmentActivity;
 
@@ -79,4 +80,12 @@ public class UtilsCommon {
     public static void showSnackbar(View contentMain,int resMsg) {
         showSnackbar(contentMain,resMsg,Snackbar.LENGTH_SHORT);
     }
+
+
+    public static boolean validateMessage(EditText etMessage){
+        return etMessage.getText() != null &&
+                !etMessage.getText().toString().trim().isEmpty();
+    }
+
+
 }

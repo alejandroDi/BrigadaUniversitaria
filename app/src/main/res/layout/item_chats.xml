@@ -1,24 +1,25 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <androidx.appcompat.widget.LinearLayoutCompat
-    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="wrap_content"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
     <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/imgPhoto"
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:visibility="gone"
         android:padding="@dimen/common_padding_small"
-        android:visibility="gone"
-        />
+        android:id="@+id/imgPhoto"/>
+
     <TextView
-        android:id="@+id/tvMessage"
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@android:color/black"
-        android:padding="@dimen/padding_message_chat"
-        android:background="@drawable/background_chat_me"
-        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_width="wrap_content"
         android:visibility="gone"
-        />
+        android:padding="@dimen/padding_message_chat"
+        android:id="@+id/tvMessage"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:background="@drawable/background_chat_me"
+        android:textColor="@android:color/black"/>
 
 </androidx.appcompat.widget.LinearLayoutCompat>

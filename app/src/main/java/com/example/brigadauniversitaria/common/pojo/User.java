@@ -12,6 +12,7 @@ public class User {
     public static final String LAST_CONNECTION_WITH = "lastConnectionWith";
     public static final String MENSSAGES_UNREAD = "menssagesUnread";
     public static final String UID = "uid";
+    public static final String MESSAGES_UNREAD = "messagesUnread";
 
     private String lastConnectionWith;
     private String username;
