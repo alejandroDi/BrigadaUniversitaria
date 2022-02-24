@@ -112,6 +112,9 @@
     <string name="chat_numero">numero telefonico</string>
     <string name="informacio">agregar textview unicamente para presentar infromacion del sistema</string>
     <string name="chat_status_last_connection">Ultima conexión: %s</string>
+    <string name="common_error_process_data">ERROR INTERNO.</string>
+    <string name="common_error_volley">Error interno en el servido, intete mas tarde.</string>
+    <string name="chat_error_method_not_exist">Imposible notificar al usuario , contacte a su administrador.</string>
 
 
 </resources>

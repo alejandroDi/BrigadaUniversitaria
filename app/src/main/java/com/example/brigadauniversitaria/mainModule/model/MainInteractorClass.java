@@ -4,6 +4,7 @@ import android.provider.SyncStateContract;
 
 import com.example.brigadauniversitaria.common.Constants;
 import com.example.brigadauniversitaria.common.model.BasicEventsCallback;
+import com.example.brigadauniversitaria.common.model.dataAccess.FirebaseCloudMessagingAPI;
 import com.example.brigadauniversitaria.common.pojo.User;
 import com.example.brigadauniversitaria.mainModule.events.MainEvent;
 import com.example.brigadauniversitaria.mainModule.model.dataAccess.Authentication;
@@ -15,12 +16,16 @@ import org.greenrobot.eventbus.EventBus;
 public class MainInteractorClass implements MainInteractor {
     private RealtimeDatabase mDatabase;
     private Authentication mAuthentication;
+    //notify
+    private FirebaseCloudMessagingAPI mCloudMessaginAPI;
 
     private User mMyUser = null;
 
     public MainInteractorClass() {
         mDatabase = new RealtimeDatabase();
         mAuthentication = new Authentication();
+        //NOTIFY
+        mCloudMessaginAPI = FirebaseCloudMessagingAPI.getInstance();
     }
 
     @Override
@@ -85,6 +90,7 @@ public class MainInteractorClass implements MainInteractor {
 
     @Override
     public void singOff() {
+        mCloudMessaginAPI.unsubscribeToMyTopic(getCurrentUser().getEmail());
         mAuthentication.singOff();
     }
 

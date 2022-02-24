@@ -5,9 +5,11 @@ import android.net.Uri;
 import androidx.fragment.app.Fragment;
 
 import com.example.brigadauniversitaria.chatModule.events.ChatEvent;
+import com.example.brigadauniversitaria.chatModule.model.dataAccess.NotificationRS;
 import com.example.brigadauniversitaria.chatModule.model.dataAccess.RealtimeDatabase;
 import com.example.brigadauniversitaria.chatModule.model.dataAccess.Storage;
 import com.example.brigadauniversitaria.common.Constants;
+import com.example.brigadauniversitaria.common.model.EventErrorTypeListener;
 import com.example.brigadauniversitaria.common.model.StorageUploadImageCallback;
 import com.example.brigadauniversitaria.common.model.dataAccess.FirebaseAuthenticationAPPI;
 import com.example.brigadauniversitaria.common.pojo.Message;
@@ -19,8 +21,8 @@ public class ChatInteractorClass implements ChatInteractor {
     private RealtimeDatabase mDatabase;
     private FirebaseAuthenticationAPPI mAuthenticationAPI;
     private Storage mStorage;
-
     //notify
+    private NotificationRS mNotification;
     //private NotificationRS mNotification;
 
     private User mMyUser;
@@ -34,7 +36,7 @@ public class ChatInteractorClass implements ChatInteractor {
         this.mDatabase = new RealtimeDatabase();
         this.mAuthenticationAPI = FirebaseAuthenticationAPPI.getInstance();
         this.mStorage = new Storage();
-        /*this.mNotification = new NotificationRS();*/
+        this.mNotification = new NotificationRS();
     }
 
 
@@ -125,7 +127,7 @@ public class ChatInteractorClass implements ChatInteractor {
                                       if (!mUidConnectedFriend.equals(getCurrentUser().getUid())){
                                           mDatabase.sumUnreadMessages(getCurrentUser().getUid(), mFriendUid);
 
-                                          /*if (mLastConnectionFriend != Constants.ONLINE_VALUE) {
+                                          if (mLastConnectionFriend != Constants.ONLINE_VALUE) {
                                               mNotification.sendNotification(getCurrentUser().getUsername(), msg,
                                                                              mFriendEmail, getCurrentUser().getUid(), getCurrentUser().getEmail(),
                                                                              getCurrentUser().getUri(), new EventErrorTypeListener() {
@@ -134,7 +136,7 @@ public class ChatInteractorClass implements ChatInteractor {
                                                               post(typeEvent, resMsg);
                                                           }
                                                       });
-                                          }*/
+                                          }
                                       }
                                   }
                               });

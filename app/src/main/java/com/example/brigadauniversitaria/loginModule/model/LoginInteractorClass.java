@@ -1,6 +1,7 @@
 package com.example.brigadauniversitaria.loginModule.model;
 
 import com.example.brigadauniversitaria.common.model.EventErrorTypeListener;
+import com.example.brigadauniversitaria.common.model.dataAccess.FirebaseCloudMessagingAPI;
 import com.example.brigadauniversitaria.common.pojo.User;
 import com.example.brigadauniversitaria.loginModule.events.LoginEvent;
 import com.example.brigadauniversitaria.loginModule.model.dataAccess.Authentication;
@@ -13,10 +14,14 @@ import org.greenrobot.eventbus.EventBus;
 public class LoginInteractorClass implements LoginInteractor {
     private Authentication mAuthentication;
     private RealtimeDatabase mDatabase;
+    //notify
+    private FirebaseCloudMessagingAPI mCloudMessagingAPI;
 
     public LoginInteractorClass() {
         mAuthentication = new Authentication();
         mDatabase = new RealtimeDatabase();
+        //notify
+        mCloudMessagingAPI = FirebaseCloudMessagingAPI.getInstance();
     }
 
     @Override
@@ -46,6 +51,8 @@ public class LoginInteractorClass implements LoginInteractor {
                         }
                     }
                 });
+                //notify
+                mCloudMessagingAPI.subscribeToMyTopic(user.getEmail());
             }
 
             @Override
