@@ -15,7 +15,7 @@
     <com.google.android.material.textfield.TextInputLayout
         android:layout_centerHorizontal="true"
         android:id="@+id/tilClasificacion"
-        android:layout_below="@id/btnUbiActual"
+        android:layout_below="@id/ivLogo"
         android:layout_margin="12dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

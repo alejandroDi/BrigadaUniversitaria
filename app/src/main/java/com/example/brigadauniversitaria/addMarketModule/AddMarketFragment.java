@@ -62,8 +62,7 @@ import de.hdodenhof.circleimageview.CircleImageView;
  * create an instance of this fragment.
  */
 public class AddMarketFragment extends DialogFragment implements DialogInterface.OnShowListener {
-    @BindView(R.id.btnUbiActual)
-    MaterialButton btnUbiActual;
+
     @BindView(R.id.actvClasificacion)
     AutoCompleteTextView actvClasificacion;
     @BindView(R.id.actvLugar)
@@ -192,6 +191,7 @@ public class AddMarketFragment extends DialogFragment implements DialogInterface
                                         } else {
                                             Market market = new Market(Double.valueOf(location.getLatitude()),Double.valueOf(location.getLongitude()),calsificacion,lugar,descripcion);
                                             mDatabaseAPI.getMarksReferences().push().setValue(market);
+                                            dismiss();
                                             Toast.makeText(getActivity().getApplicationContext(),"Datos guardados correctamente ",Toast.LENGTH_LONG).show();
                                         }
                                         //Toast.makeText(getContext(),"latitud: "+location.getLatitude()+"longitud: "+location.getLongitude(),Toast.LENGTH_LONG).show();
