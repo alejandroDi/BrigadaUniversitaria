@@ -6,7 +6,7 @@
     app:startDestination="@id/nav_map">
     <fragment
         android:id="@+id/nav_map"
-        android:name="com.example.brigadauniversitaria.Fragments.MapsFragment"
+        android:name="com.example.brigadauniversitaria.mapsModule.MapsFragment"
         android:label="Mapa"
         tools:layout="@layout/fragment_maps" />
 
@@ -18,7 +18,7 @@
 
     <fragment
         android:id="@+id/nav_notif"
-        android:name="com.example.brigadauniversitaria.Fragments.NotifFragment"
+        android:name="com.example.brigadauniversitaria.mapsModule.NotifFragment"
         android:label="@string/menu_notif"
         tools:layout="@layout/fragment_notif" />
 
@@ -32,7 +32,7 @@
 
     <fragment
         android:id="@+id/nav_locales"
-        android:name="com.example.brigadauniversitaria.Fragments.LocalesFragment"
+        android:name="com.example.brigadauniversitaria.mapsModule.LocalesFragment"
         android:label="@string/menu_locales"
         tools:layout="@layout/fragment_locales" />
     <fragment
@@ -42,7 +42,7 @@
         tools:layout="@layout/fragment_contacts" />
     <fragment
         android:id="@+id/nav_informacion"
-        android:name="com.example.brigadauniversitaria.Fragments.InformacionFragment"
+        android:name="com.example.brigadauniversitaria.mapsModule.InformacionFragment"
         android:label="@string/menu_informacion"
         tools:layout="@layout/fragment_informacion" />
 

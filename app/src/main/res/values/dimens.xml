@@ -82,5 +82,6 @@
     <dimen name="profile_size_img">192dp</dimen>
 
     <dimen name="background_chat_radius">24dp</dimen>
+    <dimen name="common_padding_default">16dp</dimen>
 
 </resources>

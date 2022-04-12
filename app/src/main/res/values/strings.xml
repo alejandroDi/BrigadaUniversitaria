@@ -115,6 +115,8 @@
     <string name="common_error_process_data">ERROR INTERNO.</string>
     <string name="common_error_volley">Error interno en el servido, intete mas tarde.</string>
     <string name="chat_error_method_not_exist">Imposible notificar al usuario , contacte a su administrador.</string>
+    <string name="autocmplete">Seleciona</string>
+    <string name="description">Descripcion</string>
 
 
 </resources>

@@ -17,6 +17,7 @@ public class FirebaseRealtimeDatabaseAPI {
     public static final String PATH_USERS = "users";
     public static final String PATH_CONTACTS = "contacts";
     public static final String PATH_REQUESTS = "requests";
+    public static final String PATH_MARKETS = "market";
 
     private DatabaseReference mDatabaseReference;
 
@@ -41,11 +42,15 @@ public class FirebaseRealtimeDatabaseAPI {
         return mDatabaseReference.getRoot();
     }
 
+
     public DatabaseReference getUserReferenceByUid(String uid){
         return getRootReferences().child(PATH_USERS).child(uid);
     }
     public DatabaseReference getContactsReferences(String uid) {
         return getUserReferenceByUid(uid).child(PATH_CONTACTS);
+    }
+    public DatabaseReference getMarksReferences() {
+        return getRootReferences().child(PATH_MARKETS);
     }
 
     public DatabaseReference getRequestReference(String email) {
