@@ -1,4 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK" />
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/Alexis cruz/Dropbox/modular/BrigadaUniversitaria/app/src/main/res/layout/activity_navigator.xml" value="0.21927083333333333" />
+        <entry key="..\:/Users/Alexis cruz/Dropbox/modular/BrigadaUniversitaria/app/src/main/res/layout/content_chat.xml" value="0.275" />
+        <entry key="..\:/Users/Alexis cruz/Dropbox/modular/BrigadaUniversitaria/app/src/main/res/layout/content_chats.xml" value="0.275" />
+        <entry key="..\:/Users/Alexis cruz/Dropbox/modular/BrigadaUniversitaria/app/src/main/res/layout/fragment_agregar_agenda.xml" value="0.275" />
+        <entry key="..\:/Users/Alexis cruz/Dropbox/modular/BrigadaUniversitaria/app/src/main/res/layout/fragment_informacion.xml" value="0.33" />
+        <entry key="..\:/Users/Alexis cruz/Dropbox/modular/BrigadaUniversitaria/app/src/main/res/layout/fragment_listar_agenda.xml" value="0.20520833333333333" />
+        <entry key="..\:/Users/Alexis cruz/Dropbox/modular/BrigadaUniversitaria/app/src/main/res/layout/fragment_locales.xml" value="0.275" />
+        <entry key="..\:/Users/Alexis cruz/Dropbox/modular/BrigadaUniversitaria/app/src/main/res/layout/fragment_locales2.xml" value="0.21927083333333333" />
+        <entry key="..\:/Users/Alexis cruz/Dropbox/modular/BrigadaUniversitaria/app/src/main/res/layout/item_contacts.xml" value="0.21927083333333333" />
+        <entry key="..\:/Users/Alexis cruz/Dropbox/modular/BrigadaUniversitaria/app/src/main/res/menu/menu_profile.xml" value="0.21851851851851853" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK" />
 </project>

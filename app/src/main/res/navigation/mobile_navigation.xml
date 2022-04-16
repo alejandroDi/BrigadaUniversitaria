@@ -16,11 +16,11 @@
         android:label="@string/menu_perfil"
         tools:layout="@layout/fragment_perfil" />
 
-    <fragment
+    <!--fragment
         android:id="@+id/nav_notif"
         android:name="com.example.brigadauniversitaria.Fragments.NotifFragment"
         android:label="@string/menu_notif"
-        tools:layout="@layout/fragment_notif" />
+        tools:layout="@layout/fragment_notif" /-->
 
     <fragment
         android:id="@+id/nav_chat"
@@ -32,17 +32,28 @@
 
     <fragment
         android:id="@+id/nav_locales"
+<<<<<<< HEAD
         android:name="com.example.brigadauniversitaria.Fragments.LocalesFragment"
+=======
+        android:name="com.example.brigadauniversitaria.localModule.LocalesFragment"
+>>>>>>> ee7ab02... agregar la opcion llamadas local e informacion de la aplicacion
         android:label="@string/menu_locales"
         tools:layout="@layout/fragment_locales" />
-    <fragment
+    <!--fragment
         android:id="@+id/nav_contactos"
         android:name="com.example.brigadauniversitaria.Fragments.ContactosFragment"
         android:label="@string/menu_contactos"
+<<<<<<< HEAD
         tools:layout="@layout/fragment_notif" />
     <fragment
         android:id="@+id/nav_informacion"
         android:name="com.example.brigadauniversitaria.Fragments.InformacionFragment"
+=======
+        tools:layout="@layout/item_contacts" /-->
+    <fragment
+        android:id="@+id/nav_informacion"
+        android:name="com.example.brigadauniversitaria.General"
+>>>>>>> ee7ab02... agregar la opcion llamadas local e informacion de la aplicacion
         android:label="@string/menu_informacion"
         tools:layout="@layout/fragment_informacion" />
 

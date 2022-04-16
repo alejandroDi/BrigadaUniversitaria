@@ -110,5 +110,24 @@
     <string name="addFriend_message_request_exist">Lo siento, tu solicitud ya habia sido enviada.</string>
     <string name="friendAdded_message_request_exist">Lo siento, ya tienes agregado a este usuario.</string>
 
+    <!--agenda de contactos-->
+    <string name="nombre">Nombre de Contacto</string>
+    <string name="numero">Numero de telefono</string>
+
+    <!--Informacion de la aplicacion-->
+
+    <string name="titulo">Información de la aplicación</string>
+    <string name="proyecto">NOMBRE: BRIGADA UNIVERSITARIA</string>
+    <string name="version">Version: 1.0.0.0</string>
+
+    <string name="titulo_desarrollador">Desarrolladores</string>
+    <string name="ricardo">RICARDO ENRIQUE ALCALA MENDEZ</string>
+    <string name="yonathan">TOVAR DIAZ YONATHAN ALEJANDRO</string>
+    <string name="alexis">FRANCISCO ALEXIS CRUZ LEAL</string>
+
+    <string name="Contenido">Contenido en línea</string>
+    <string name="privacidad">Politicas de privacidad</string>
+    <string name="derecho">Politica de derechos de autor</string>
+    <string name="terminos">Terminos de servicio</string>
 
 </resources>

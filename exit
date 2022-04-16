@@ -1,0 +1,65 @@
+[33mcommit 50052f1662c94af8ea27e94867435b114306cfc2[m[33m ([m[1;36mHEAD -> [m[1;32mautoridL[m[33m, [m[1;31morigin/informacion[m[33m, [m[1;31morigin/autoridL[m[33m)[m
+Author: yonat <yonathan.tovar@alumnos.udg.mx>
+Date:   Sat Oct 30 10:30:04 2021 -0500
+
+    add module chat
+
+[33mcommit 7f006ffafed86b558e99ed5ea0894ddfe88e2036[m
+Author: yonat <yonathan.tovar@alumnos.udg.mx>
+Date:   Tue Oct 19 23:10:07 2021 -0500
+
+    implement validation PerfilModule
+
+[33mcommit 14afb4a99edf090e99fbf55eb2bb02472382b37b[m
+Author: yonat <yonathan.tovar@alumnos.udg.mx>
+Date:   Sun Oct 3 20:49:09 2021 -0500
+
+    implement validation addFriend
+
+[33mcommit f0d7baf9af23e8c835fe286249cf76c108cec355[m
+Author: yonat <yonathan.tovar@alumnos.udg.mx>
+Date:   Thu Sep 23 00:05:41 2021 -0500
+
+    implement addFriend
+
+[33mcommit 950d47d9289f57e1b984aa298d7e54cfb8c3e177[m
+Author: yonat <yonathan.tovar@alumnos.udg.mx>
+Date:   Wed Sep 22 16:42:36 2021 -0500
+
+    change activy to fragment
+
+[33mcommit 84f18f53e6eb11c6a34f46c6e7de83f8c1ed7a3e[m
+Author: yonat <yonathan.tovar@alumnos.udg.mx>
+Date:   Sun Sep 5 10:55:57 2021 -0500
+
+    add icons
+
+[33mcommit ce1847c5206c48425cb61b29574fb72f6fb03f74[m
+Author: yonat <yonathan.tovar@alumnos.udg.mx>
+Date:   Wed Sep 1 00:45:09 2021 -0500
+
+    implement view chat comlplete
+
+[33mcommit 202877fbb40c236dcdb8163c445de012a30a7ba4[m
+Author: yonat <yonathan.tovar@alumnos.udg.mx>
+Date:   Mon Aug 23 23:45:48 2021 -0500
+
+    REQUEST AND USER ADAPTER
+
+[33mcommit 2ce7e8242e0d7e078dcd3ced28840e1a08fd09a7[m
+Author: yonat <yonathan.tovar@alumnos.udg.mx>
+Date:   Mon Aug 23 21:53:27 2021 -0500
+
+    PRESENTER IMPLEMENT
+
+[33mcommit 0a4240a74e43d35b8a90c2f25f901d3c1656881b[m
+Author: yonat <yonathan.tovar@alumnos.udg.mx>
+Date:   Mon Aug 23 00:06:00 2021 -0500
+
+    ADD MVP MODEL
+
+[33mcommit 53877ad7ec7e618b2239f356e0273a85cd9abcc1[m
+Author: yonat <yonathan.tovar@alumnos.udg.mx>
+Date:   Mon May 10 23:09:17 2021 -0500
+
+    primer commit
