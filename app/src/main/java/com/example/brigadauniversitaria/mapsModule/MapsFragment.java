@@ -22,6 +22,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import com.chaquo.python.PyObject;
+import com.chaquo.python.Python;
+import com.chaquo.python.android.AndroidPlatform;
 import com.example.brigadauniversitaria.R;
 import com.example.brigadauniversitaria.addMarketModule.AddMarketFragment;
 import com.example.brigadauniversitaria.common.model.dataAccess.FirebaseRealtimeDatabaseAPI;
@@ -55,6 +58,8 @@ import butterknife.Unbinder;
 public class MapsFragment extends Fragment{
     @BindView(R.id.btnInsidente)
     FloatingActionButton btnInsidente;
+    @BindView(R.id.btnVeri)
+    FloatingActionButton btnVeri;
     Unbinder unbinder;
     private int MY_PERMISSION_REQUEST_FINE_LOCATION;
     FloatingActionButton ubicacion,verificar, insi;
@@ -85,6 +90,14 @@ public class MapsFragment extends Fragment{
                     ubicacionActual(googleMap);
                 }
             });
+
+            btnVeri.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    validarZona();
+                }
+            });
+
 
 
         }
@@ -164,6 +177,39 @@ public class MapsFragment extends Fragment{
                         }
                     }
                 });
+    }
+
+    private void validarZona(){
+
+        if (ActivityCompat.checkSelfPermission(getContext(),
+                                               Manifest.permission.ACCESS_FINE_LOCATION)
+                != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(getContext(),Manifest.permission.ACCESS_COARSE_LOCATION)
+                != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions((Activity) getContext(),
+                                              new String[]{Manifest.permission.ACCESS_FINE_LOCATION},
+                                              MY_PERMISSION_REQUEST_FINE_LOCATION);
+
+            return;
+        }
+        fusedLocationClient.getLastLocation()
+                .addOnSuccessListener((Activity) getContext(),new OnSuccessListener<Location>() {
+                    @Override
+                    public void onSuccess(Location location) {
+                        // Got last known location. In some rare situations this can be null.
+                        if (location != null) {
+                            LatLng mylocation = new LatLng(location.getLatitude(),location.getLongitude());
+                            if(!Python.isStarted()){
+                                Python.start(new AndroidPlatform(getContext()));
+                            }
+                            Python py = Python.getInstance();
+                            PyObject pyobj = py.getModule("script");
+
+                            PyObject obj = pyobj.callAttr("main",Double.valueOf(location.getLatitude()),Double.valueOf(location.getLongitude()));
+                            Toast.makeText(getContext(),""+obj.toString(),Toast.LENGTH_LONG).show();
+                        }
+                    }
+                });
+
     }
 
 
