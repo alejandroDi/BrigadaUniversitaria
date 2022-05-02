@@ -14,10 +14,7 @@
             android:id="@+id/nav_perfil"
             android:icon="@drawable/ic_menu_perfil"
             android:title="@string/menu_perfil" />
-        <item
-            android:id="@+id/nav_notif"
-            android:icon="@drawable/ic_menu_noti"
-            android:title="@string/menu_notif" />
+
 
     </group>
 
@@ -42,10 +39,7 @@
 
             <menu>
 
-                <item
-                    android:id="@+id/nav_contactos"
-                    android:icon="@drawable/ic_menu_contac"
-                    android:title="@string/menu_contactos" />
+
 
                 <item
                     android:id="@+id/nav_informacion"

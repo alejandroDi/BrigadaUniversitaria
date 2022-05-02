@@ -61,8 +61,8 @@ import de.hdodenhof.circleimageview.CircleImageView;
  * Use the {@link ChatsFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class ChatsFragment extends Fragment implements OnItemClickListener,ChatView {
-
+public class ChatsFragment extends Fragment implements ChatView {
+//componentes de xml
     @BindView(R.id.imgPhoto)
     CircleImageView imgPhoto;
     @BindView(R.id.tvName)
@@ -81,7 +81,7 @@ public class ChatsFragment extends Fragment implements OnItemClickListener,ChatV
     AppCompatEditText etMessage;
 
     Unbinder unbinder;
-
+//declaracion de variables
     private ChatAdapter mAdapter;
     private ChatPresenter mPresenter;
     private Message messageSelected;
@@ -104,6 +104,7 @@ public class ChatsFragment extends Fragment implements OnItemClickListener,ChatV
         // Required empty public constructor
     }
 
+   // recive caracteristicas del usuario del la lista de amigos
     public static ChatsFragment newInstance(String uid,String username,String email,String photoUrl) {
         ChatsFragment fragment = new ChatsFragment();
         Bundle args = new Bundle();
@@ -114,7 +115,7 @@ public class ChatsFragment extends Fragment implements OnItemClickListener,ChatV
         fragment.setArguments(args);
         return fragment;
     }
-
+//se asignan las variables recividas a varibles dependientes de la clase
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -126,14 +127,16 @@ public class ChatsFragment extends Fragment implements OnItemClickListener,ChatV
         }
     }
 
-
+//crea vitas de fragment
     @Override
     public View onCreateView(LayoutInflater inflater,ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_chats,container,false);
         unbinder = ButterKnife.bind(this,view);
+        //inicializamos el presenter
         mPresenter = new ChatPresenterClass(this);
         mPresenter.onCreate();
+        //definimos a mUser al usuario actual
         mUser = mPresenter.getCurrentUser();
         configAdapter();
         configRecyclerView();
@@ -142,16 +145,16 @@ public class ChatsFragment extends Fragment implements OnItemClickListener,ChatV
 
         return view;
     }
-
+//1212
     private void configAdapter() {
-        mAdapter = new ChatAdapter(new ArrayList<Message>(),this);
+        mAdapter = new ChatAdapter(new ArrayList<Message>());
     }
-
+//121
     private void configRecyclerView() {
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         recyclerView.setAdapter(mAdapter);
     }
-
+//1212121
     private void configToolbar(String uid,String username,String email,String photoUrl) {
 
         mPresenter.setupFriend(uid, email);
@@ -189,7 +192,7 @@ public class ChatsFragment extends Fragment implements OnItemClickListener,ChatV
             actionBar.setDisplayHomeAsUpEnabled(true);
         }
     }
-
+//ciclo de vida de la app
     @Override
     public void onResume() {
         super.onResume();
@@ -217,7 +220,7 @@ public class ChatsFragment extends Fragment implements OnItemClickListener,ChatV
         }
         return super.onOptionsItemSelected(item);
     }
-    
+
     public void onBackPressed() {
         Intent intent = new Intent(getActivity(), NavigatorActivity.class);
         startActivity(intent);
@@ -228,7 +231,7 @@ public class ChatsFragment extends Fragment implements OnItemClickListener,ChatV
         }
     }
 
-
+///metodos de la interfaz de view
     @Override
     public void showProgress() {
         progressBar.setVisibility(View.VISIBLE);
@@ -299,7 +302,7 @@ public class ChatsFragment extends Fragment implements OnItemClickListener,ChatV
     }
 
     /*
-    * Click events
+    * Click al boton enviar
     * */
 
     @OnClick(R.id.btnSendMessage)
@@ -310,13 +313,5 @@ public class ChatsFragment extends Fragment implements OnItemClickListener,ChatV
         }
     }
 
-    @Override
-    public void onImageLoaded() {
 
-    }
-
-    @Override
-    public void onClickImage(Message message) {
-
-    }
 }

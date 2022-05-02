@@ -3,12 +3,98 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".mapsModule.InformacionFragment">
+    tools:context=".informacionModule.InformacionFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/informacio" />
 
-</FrameLayout>
+<!-- TODO: Update blank fragment layout -->
+    <androidx.appcompat.widget.LinearLayoutCompat
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:text="@string/hello_blank_fragment"
+    android:orientation="vertical"
+    android:background="#0000">
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/titulo"
+            android:padding="5dp"
+            android:textSize="25sp"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/proyecto"
+            android:padding="5dp"
+            android:textSize="18sp"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/version"
+            android:padding="5dp"
+            android:textSize="18sp"
+            android:layout_marginBottom="19dp"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/titulo_desarrollador"
+            android:padding="5dp"
+            android:textSize="25sp"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/ricardo"
+            android:padding="5dp"
+            android:textSize="18sp"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/yonathan"
+            android:padding="5dp"
+            android:textSize="18sp"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/alexis"
+            android:padding="5dp"
+            android:textSize="18sp"
+            android:layout_marginBottom="19dp"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/Contenido"
+            android:padding="5dp"
+            android:textSize="25sp"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/privacidad"
+            android:padding="5dp"
+            android:textSize="18sp"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/derecho"
+            android:padding="5dp"
+            android:textSize="18sp"
+
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/terminos"
+            android:padding="5dp"
+            android:textSize="18sp"
+            />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+    </FrameLayout>

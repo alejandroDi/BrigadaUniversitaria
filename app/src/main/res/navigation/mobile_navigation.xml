@@ -16,11 +16,6 @@
         android:label="@string/menu_perfil"
         tools:layout="@layout/fragment_perfil" />
 
-    <fragment
-        android:id="@+id/nav_notif"
-        android:name="com.example.brigadauniversitaria.mapsModule.NotifFragment"
-        android:label="@string/menu_notif"
-        tools:layout="@layout/fragment_notif" />
 
     <fragment
         android:id="@+id/nav_chat"
@@ -32,17 +27,13 @@
 
     <fragment
         android:id="@+id/nav_locales"
-        android:name="com.example.brigadauniversitaria.mapsModule.LocalesFragment"
+        android:name="com.example.brigadauniversitaria.localesModule.AutoridadFragment"
         android:label="@string/menu_locales"
         tools:layout="@layout/fragment_locales" />
-    <fragment
-        android:id="@+id/nav_contactos"
-        android:name="com.example.brigadauniversitaria.contactsModule.view.ContactsFragment"
-        android:label="@string/menu_contactos"
-        tools:layout="@layout/fragment_contacts" />
+
     <fragment
         android:id="@+id/nav_informacion"
-        android:name="com.example.brigadauniversitaria.mapsModule.InformacionFragment"
+        android:name="com.example.brigadauniversitaria.informacionModule.InformacionFragment"
         android:label="@string/menu_informacion"
         tools:layout="@layout/fragment_informacion" />
 

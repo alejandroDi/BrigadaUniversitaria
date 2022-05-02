@@ -9,8 +9,13 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.Manifest;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import android.content.pm.PackageManager;
 
 import com.example.brigadauniversitaria.chatModule.view.ChatsFragment;
+import com.example.brigadauniversitaria.common.pojo.Contacto;
 import com.example.brigadauniversitaria.mainModule.view.adapters.OnItemClickListener;
 import com.example.brigadauniversitaria.common.pojo.User;
 import com.example.brigadauniversitaria.common.utils.UtilsCommon;
@@ -89,7 +94,7 @@ public class  NavigatorActivity extends AppCompatActivity implements iComunicaFr
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
             mAppBarConfiguration = new AppBarConfiguration.Builder(
-                    R.id.nav_map,R.id.nav_perfil,R.id.nav_notif,R.id.nav_chat,R.id.nav_locales,R.id.nav_contactos,R.id.nav_informacion)
+                    R.id.nav_map,R.id.nav_perfil,R.id.nav_chat,R.id.nav_locales,R.id.nav_informacion)
                 .setDrawerLayout(drawer)
                 .build();
         NavController navController = Navigation.findNavController(this,R.id.nav_host_fragment);
@@ -141,5 +146,30 @@ public class  NavigatorActivity extends AppCompatActivity implements iComunicaFr
         fragmentTransaction.replace(R.id.drawer_layout,chatsFragment);
         fragmentTransaction.addToBackStack(null);
         fragmentTransaction.commit();
+    }
+
+    @Override
+    public void contactOpen(Contacto contacto) {
+        String nombre = contacto.getNombre();
+        String telefono = contacto.getTelefono();
+        Intent intent = new Intent(Intent.ACTION_CALL, Uri.parse("tel: "+telefono));
+        if(ActivityCompat.checkSelfPermission(getApplicationContext(), Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED){
+            // TODO: Consider calling
+            // ActivityCompart#requestPerissions
+            //  here to request the missing permissions, and then overriding
+            //    public  void onRequestPermissionsResult (int requestCode, String[] permissions,
+            //                                             int[] grantResults)
+            //to handle the case where user granted permission. See the documentation
+            // for ActivityCompat#requestPermissions for more details.
+            Toast.makeText(this,"Falta activar el permiso de llamadas", Toast.LENGTH_SHORT);
+            //Toast.makeText(DetalleContacto.this, "Falta activar el permiso de llamda", (Toast.LENGTH_SHORT));
+            return;
+
+        }
+
+        startActivity(intent);
+
+        Toast.makeText(this,contacto.getNombre()+contacto.getTelefono(),Toast.LENGTH_LONG).show();
+
     }
 }

@@ -40,7 +40,7 @@ public class ChatAdapter extends RecyclerView.Adapter<ChatAdapter.ViewHolder> {
 
     private int lastPhoto = 0;
 
-    public ChatAdapter(List<Message> mMessages, OnItemClickListener mListener) {
+    public ChatAdapter(List<Message> mMessages) {
         this.mMessages = mMessages;
         this.mListener = mListener;
     }
